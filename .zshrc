@@ -20,19 +20,6 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)  # include hidden files.
 
-# vi mode
-bindkey -v
-export KEYTIMEOUT=1
-
-set -o vi
-
-# Keep $HOME clean
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CACHE_HOME="$HOME/.cache"
-
-export JUPYTER_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME:/.config}/jupyter"
-
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
@@ -44,8 +31,23 @@ bindkey -v '^?' backward-delete-char
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+set -o vi
+
+# Keep $HOME clean
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+export DOOMDIR="${XDG_CONFIG_HOME:-$HOME/.config}/doom"
+export JUPYTER_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME:/.config}/jupyter"
+
 # PATH
 export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+export PATH=$PATH:$HOME/.local/src/doom-emacs/bin
 
 # Virtualenvwrapper
 export WORKON_HOME="$XDG_DATA_HOME/pyenvs"

@@ -7,13 +7,44 @@
 ```bash
 sudo apt-get install python3 python3-pip python-is-python3
 sudo apt-get install neovim
-sudo apt-get install ranger
-sudo apt-get install bat
 sudo apt-get install fzf
 ```
 
 ```bash
 pip install virtualenvwrapper
+```
+### Install optional life-improvements
+
+```bash
+sudo apt-get install ranger
+sudo apt-get install bat
+```
+
+### Emacs/Doom-Emacs
+
+```bash
+sudo add-apt-repository ppa:kelleyk/emacs
+sudo apt-get update
+sudo apt-get remove emacs
+sudo apt-get autoremove
+sudo apt-get install emacs27
+
+sudo apt-get install fd-find
+sudo apt-get install ripgrep
+
+git clone -b develop https://github.com/hlissner/doom-emacs ~/.local/src/doom-emacs
+$HOME/.local/src/doom-emacs/bin/doom install
+
+git clone https://github.com/plexus/chemacs.git ~/.local/src/chemacs
+sh ~/.local/src/chemacs/install.sh
+
+mkdir -p ~/.config/emacs
+touch ~/.config/emacs/init.el
+
+echo -e \
+'(("default" . ((user-emacs-directory . "~/.local/src/doom-emacs")))
+  ("vanilla" . ((user-emacs-directory . "~/.config/emacs"))))
+' > ~/.emacs-profiles.el
 ```
 
 ### Configure git
