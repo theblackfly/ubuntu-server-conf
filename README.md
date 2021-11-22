@@ -13,11 +13,19 @@ sudo apt-get install fzf
 ```bash
 pip install virtualenvwrapper
 ```
+
 ### Install optional life-improvements
 
 ```bash
 sudo apt-get install ranger
 sudo apt-get install bat
+```
+
+```bash
+sudo apt-get install ruby
+gem install tmuxinator
+sudo apt-get install wget
+sudo wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh -O /usr/share/zsh/site-functions/_tmuxinator
 ```
 
 ### Emacs/Doom-Emacs
