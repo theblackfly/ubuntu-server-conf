@@ -71,7 +71,7 @@ git clone --no-checkout https://github.com/theblackfly/ubuntu-server-conf.git $H
 
 cd $HOME/ubuntu-server-conf && git config core.worktree "$HOME"
 cd $HOME && echo "gitdir: $HOME/ubuntu-server-conf/.git" > .git
-cd $HOME && git reset master
+cd $HOME && git reset --hard master
 ```
 
 ## Tips and Tricks
