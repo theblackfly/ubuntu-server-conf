@@ -8,8 +8,8 @@ stty stop undef  # disable ctrl-s to freeze terminal
 setopt interactive_comments
 
 # History
-HISTSIZE=100000
-SAVEHIST=100000
+HISTSIZE=10000000
+SAVEHIST=10000000
 HISTFILE=~/.cache/zsh/history
 
 # Use modern completion system
